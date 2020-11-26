@@ -9,5 +9,5 @@ using namespace std;
 string _uintToBin(uint64_t n);
 string _binStrToSymbols(const string& bitstr, uint64_t symb_bits_size);
 string supplement(string str, uint64_t size);
-uint32_t _binStrToUlong(const string& str);
+uint64_t _binStrToUlong(const string& str);
 

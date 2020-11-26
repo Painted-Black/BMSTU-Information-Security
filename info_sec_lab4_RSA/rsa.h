@@ -11,7 +11,7 @@ class RSA
 public:
 	string crypt(const string& str);
 	string encrypt(const string& str);
-	void generateKeys(uint16_t min = 16);
+	void generateKeys(const uint16_t min = 16);
 private:
 	int64_t findE(int64_t fi);
 	int64_t findD(int64_t fi, int64_t E, int64_t N);

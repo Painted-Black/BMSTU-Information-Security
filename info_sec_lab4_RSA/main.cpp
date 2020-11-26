@@ -9,8 +9,8 @@
 
 using namespace std;
 
-const string crypt_filename = "../rsa_crypt";
-const string encrypt_filename = "../rsa_encrypt";
+const string crypt_filename = "./rsa_crypt";
+const string encrypt_filename = "./rsa_encrypt";
 
 std::string readAllFromFile(const std::string& filename)
 {
@@ -39,16 +39,12 @@ int strToFile(string filename, string str)
 
 int main()
 {
-//	UINT16_MAX;
-//	UINT16_MAX;
-//	uint64_t t =   uint64_t(65535) * uint64_t(65535);
-//	uint64_t res = 50047 * 43787;
-//	cout << t << endl;
-//	return 0;
 	string filename;
 	cout << "Input filename: ";
 	cin >> filename;
+//	filename = "../tests/text";
 	string init = readAllFromFile(filename);
+	Debug::debug(filename);
 
 	srand(time(nullptr));
 	Debug::setType(Debug::Type::Debug, false);

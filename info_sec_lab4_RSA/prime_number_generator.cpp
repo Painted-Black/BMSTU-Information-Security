@@ -1,10 +1,12 @@
 #include "prime_number_generator.h"
 #include <algorithm>
 #include <assert.h>
+#include <debug.h>
 
 int64_t PrimeNumberGenerator::generate(uint64_t min, uint64_t max)
 {
 	assert(min <= max);
+
 	vector<uint64_t> prime_nums_vec = eratosthenesSieve(max);
 	uint64_t prime_nums_vec_size = prime_nums_vec.size();
 
@@ -18,6 +20,7 @@ int64_t PrimeNumberGenerator::generate(uint64_t min, uint64_t max)
 		return -1; // невозможно сгенерировать простое число в заданном диапазоне
 	}
 	uint64_t random_idx = min_idx + rand() % (prime_nums_vec_size - min_idx);
+	Debug::debug("% prime_nums_vec.at(random_idx): %", __PRETTY_FUNCTION__, prime_nums_vec.at(random_idx));
 	return prime_nums_vec.at(random_idx);
 }
 
